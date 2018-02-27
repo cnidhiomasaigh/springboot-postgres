@@ -43,7 +43,7 @@ private static final Logger logger = LoggerFactory.getLogger(Application.class);
 		@GetMapping(value = "/customers/{name}")
 		public ResponseEntity<List<Customer>> applicationData(@PathVariable String lastName) {
 			logger.debug("--Get By Name--");
-			List<Customer> customer = customerRepository.findByName(lastName);
+			List<Customer> customer = customerRepository.findByLastName(lastName);
 			return ResponseEntity.ok().body(customer);
 		}
 
